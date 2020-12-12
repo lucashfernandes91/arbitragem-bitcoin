@@ -6,26 +6,26 @@ import numpy
 spread_desejado = 1 # PREENCHER CAMPO APENAS COM O VALOR INTERNO, DESCONSIDERANDO A (%)
 
 while True:
-    requisicao = requests.get('http://api.bitvalor.com/v1/ticker.json')
+    requisicao = requests.get('https://api.bitvalor.com/v1/ticker.json')
     informacoes = json.loads(requisicao.text)
 
     # RETORNA O VALOR DO BITCOIN EM CADA EXCHANGE
     exchange = {}
-    exchange['bitcoin_to_you'] = informacoes['ticker_24h']['exchanges']['B2U']['last']
-    exchange['foxbit'] = informacoes['ticker_24h']['exchanges']['FOX']['last']
-    exchange['mercado_bicoin'] = informacoes['ticker_24h']['exchanges']['MBT']['last']
-    exchange['negocie_coins'] = informacoes['ticker_24h']['exchanges']['NEG']['last']
-    exchange['flowbtc'] = informacoes['ticker_24h']['exchanges']['FLW']['last']
+    exchange['Walltime'] = informacoes['ticker_24h']['exchanges']['WAL']['last']
+    exchange['Mercado_Bitcoin'] = informacoes['ticker_24h']['exchanges']['MBT']['last']
+    exchange['BitCambio'] = informacoes['ticker_24h']['exchanges']['CAM']['last']
+    exchange['BZX'] = informacoes['ticker_24h']['exchanges']['BZX']['last']
+    exchange['BitcoinTrade'] = informacoes['ticker_24h']['exchanges']['BTD']['last']
 
     # ATRIBUI O PREÇO DO BITCOIN ÁS VARIÁVEIS
-    b2u = exchange['bitcoin_to_you']
-    foxbit = exchange['foxbit']
-    mercado_bicoin = exchange['mercado_bicoin']
-    negocie_coins = exchange['negocie_coins']
-    flowbtc = exchange['flowbtc']
-
+    walltime = exchange['Walltime']
+    mbitcoin = exchange['Mercado_Bitcoin']
+    bitcambio = exchange['BitCambio']
+    bzx = exchange['BZX']
+    bitcointrade = exchange['BitcoinTrade']
+    
     # CRIA UMA TUPLA COM OS TODOS OS PREÇOS DE BITCOIN
-    valores = (b2u, foxbit, mercado_bicoin, negocie_coins, flowbtc)
+    valores = (walltime, mbitcoin, bitcambio, bzx, bitcointrade)
 
     # RETORNA O MENOR PREÇO
     menor_preco = numpy.amin(valores)
