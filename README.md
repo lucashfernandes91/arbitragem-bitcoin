@@ -7,15 +7,13 @@ de preço entre elas, e dispara uma mensagem quando o spread configurado for alc
 As consultas são realizadas no site: www.bitvalor.com.br
 
 Os cálculos para arbitragem são realizados considerando o valor do Bitcoin em cada Exchange:
-  - BitcoinToYou
-  - Foxbit
   - Mercado Bitcoin
-  - Negocie Coins
-  - FlowBTC
+  - Bitcoin Trade
+  - Bisq
 
 # Requisitos:
 Python 3 ou superior
-Bibliotecas Python: requests, json, numpy, time, datetime, 
+Bibliotecas Python: requests, json, numpy, time, datetime, certifi,urllib3.
 
 
 Dúvidas e seguestões de melhorias: lucashfernandes@yahoo.com.br
